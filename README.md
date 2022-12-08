@@ -17,3 +17,8 @@
 
 * Posicionarse en la carpeta `backend_drawingApp/db/dibujos.sql`
 * Abrir terminal y escribir: `mysql -u root -p < dibujos.sql`
+* En caso de tener una configuración diferente en mysql editar el archivo `backend_drawingApp/src/db.js`
+
+### **Error ejecución backend?**
+
+* Ejecutar con `node src/index.js`

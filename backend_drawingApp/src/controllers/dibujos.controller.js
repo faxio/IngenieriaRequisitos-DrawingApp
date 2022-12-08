@@ -25,6 +25,7 @@ export const editarDibujo = (req, res) => {
 
 export const eliminarDibujo = async(req, res) => {
     const id = req.params.id
+    await pool.query('DELETE FROM posiciones WHERE id = ?', [id])
     const result = await pool.query('DELETE FROM DIBUJO WHERE id = ?', [id])
     res.send(result) 
 }
