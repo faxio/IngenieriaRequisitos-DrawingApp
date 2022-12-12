@@ -9,7 +9,7 @@ router.get( '/dibujos/:id',getDibujosID)
 
 router.post( '/dibujos', createDibujo)
 
-router.put( '/dibujos',editarDibujo);
+router.put( '/dibujos/:id',editarDibujo);
 
 router.delete( '/dibujos/:id',eliminarDibujo);
 

@@ -33,12 +33,11 @@ const Card = (props) => {
                         value={color}
                         onChange={changeColor}
                     />
-
                 </Stack>
 
                 <div>
                     <ContenedorCuadrilla>
-                        <Buttons/>
+                        <Buttons value={color} id={props.id}/>
                         
                     </ContenedorCuadrilla>
                     <p>{props?.nombre}</p>

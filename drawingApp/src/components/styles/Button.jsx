@@ -6,7 +6,7 @@ export const BotonApp = styled.div`
     max-width: 15px;
     max-height: 15px;
     display: inline-block;
-    background-color: blue;
+    background-color: ${props => props.color? props.color: "white"};
     color: black;
     margin: 2px;
 `
