@@ -1,4 +1,5 @@
 import {pool} from '../db.js'
+import { Dibujo } from '../model/Dibujo.js';
 
 export const getDibujos = async (req, res) => {
     const result = await pool.query("SELECT * FROM dibujo ORDER BY id DESC")
@@ -20,7 +21,6 @@ export const createDibujo = async (req, res) => {
     }
     await pool.query('INSERT INTO Posiciones (id, pos, color) VALUES'+ xString.slice(0, xString.length -1))
     res.send({row})
-    //console.log(xString.slice(0, xString.length -1))
 }
 
 export const editarDibujo = async(req, res) => {

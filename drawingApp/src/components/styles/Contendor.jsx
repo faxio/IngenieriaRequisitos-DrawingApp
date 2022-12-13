@@ -10,6 +10,7 @@ export const ContenedorCuadrilla = styled.div`
     align-items: center;
     justify-content: stretch;
     line-height: 0;
+    margin-bottom: 2px;
 `
 
 export const ContenedorDraw = styled.div`
@@ -29,6 +30,11 @@ export const Queue = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+`
+
+export const QueueSpace = styled(Queue)`
+    align-items: center;
+    justify-content: space-between;
 `
 
 export const Header = styled.div`

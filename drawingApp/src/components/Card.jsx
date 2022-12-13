@@ -1,8 +1,9 @@
 import React, { useState, useRef } from 'react'
 import { Buttons } from './Buttons'
-import { ContenedorCuadrilla, ContenedorDraw, Stack } from './styles/Contendor'
+import { ContenedorCuadrilla, ContenedorDraw, Queue, Stack, QueueSpace } from './styles/Contendor'
 import { BotonesInteractivos, Icons, InputInteractivo } from './styles/Button'
 import axios from 'axios'
+import { InputP } from './styles/Input'
 
 const URL = "http://localhost:3000/api/dibujos"
 
@@ -11,6 +12,7 @@ const Card = (props) => {
     const colorActivado = "#06c364"
     const [color, setColor] = useState("#FF0000")
     const [ activar, setActivar] = useState(true)
+    const [ nombre, setNombre] = useState(props.nombre)
 
     const changeColor = (e) => {
         e.preventDefault();
@@ -18,6 +20,9 @@ const Card = (props) => {
         setColor(e.target.value)
     }
 
+    const cambiarNombre = (e) => {
+        setNombre(e.target.value)
+    }
 
     const eliminarDibujo = async()=> {
         axios
@@ -45,14 +50,17 @@ const Card = (props) => {
                         <Buttons value={color} id={props.id} disabled={activar}/>
                         
                     </ContenedorCuadrilla>
-                    <p>{props?.nombre}</p>
+                    <QueueSpace>
+                    <InputP
+                        onChange={cambiarNombre}
+                        value={nombre}
+                    />
+                        <BotonesInteractivos> 
+                            <i className='bx bx-save'></i>
+                        </BotonesInteractivos >
+                    </QueueSpace>
                 </div>
                 <Stack>
-                    {/* 
-                    <BotonesInteractivos> 
-                        <i className='bx bx-save'></i>
-                    </BotonesInteractivos >
-                    */}
                     <BotonesInteractivos onClick={ (e) => setActivar(!activar) } color={activar?  "" : colorActivado}>
                         <i className='bx bx-edit-alt' ></i>
                     </BotonesInteractivos>

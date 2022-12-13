@@ -1,3 +1,9 @@
+### Requisitos
+* MariaDB/MySql
+* NodeJs
+* Git
+
+
 ### Pasos utilizados para la inicialización
 * `npm init --yes` Inicializa con datos por defecto
 * `npm install express --save` Instalar libreria express

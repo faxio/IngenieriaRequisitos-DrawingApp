@@ -5,13 +5,16 @@ export class Dibujo {
     }
     generatePos(){
         for (let i=0; i<400; i++){
-            this.posiciones.push(Posiciones(i,"#FF0000"))
+            this.posiciones.push(new Posiciones(i,"#FF0000"))
         }
+    }
+    getNombre(){
+        return this.nombre
     }
 
 } 
 
-export class Posiciones {
+class Posiciones {
     Posiciones(posicion, color){
         this.posicion = posicion;
         this.color = color;

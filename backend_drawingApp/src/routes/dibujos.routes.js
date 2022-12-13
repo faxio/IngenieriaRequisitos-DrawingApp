@@ -7,10 +7,13 @@ router.get( '/dibujos',getDibujos)
 
 router.get( '/dibujos/:id',getDibujosID)
 
+
 router.post( '/dibujos', createDibujo)
 
 router.put( '/dibujos/:id',editarDibujo);
 
+
 router.delete( '/dibujos/:id',eliminarDibujo);
+
 
 export default router;

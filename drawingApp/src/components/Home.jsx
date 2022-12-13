@@ -37,6 +37,8 @@ const Home = () => {
             />
             )
           })}
+          {dibujos.length < 1? 
+             (<><h1>No hay ningun dibujo</h1> <h2>Agregue uno por favor</h2></>): ""}
           
       </ContenedorCard>
     </>

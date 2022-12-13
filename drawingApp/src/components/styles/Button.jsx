@@ -9,6 +9,9 @@ export const BotonApp = styled.div`
     background-color: ${props => props.color? props.color: "white"};
     color: black;
     margin: 2px;
+    & :hover {
+        cursor: pointer;
+    }
 `
 
 export const BotonesInteractivos = styled.button`

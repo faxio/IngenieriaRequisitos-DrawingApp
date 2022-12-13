@@ -53,6 +53,7 @@ export const Buttons = (props) => {
                         key={boton.pos} 
                         color={boton.color}
                         onClick={(e) => click(e, boton.pos, boton.color,props.disabled)}
+                        disabled={props.disabled}
                         >
                         
                      </BotonApp>
