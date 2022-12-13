@@ -18,6 +18,7 @@ export const BotonesInteractivos = styled.button`
     margin-bottom: 8px;
     background-color: white;
     border: 1px solid black;
+    color: ${props => props.color? props.color: 'black'};
     & :hover {
         cursor: pointer;
     }

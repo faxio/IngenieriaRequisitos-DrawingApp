@@ -32,7 +32,10 @@ export const Buttons = (props) => {
     const size = creacion(sizeX,sizeY);
     */
 
-    const click = (e,x,y) => {
+    const click = async(e,x,y,z) => {
+        if (!z){
+
+
         axios
             .put(`${URL+props.id}`, {
                 pos: x,
@@ -40,6 +43,7 @@ export const Buttons = (props) => {
             }).then(response => {
                 console.log("Actualizado")
             })
+        }
     }
     return (
         <div>
@@ -48,7 +52,9 @@ export const Buttons = (props) => {
                      <BotonApp 
                         key={boton.pos} 
                         color={boton.color}
-                        onClick={(e) => click(e, boton.pos, boton.color)}>
+                        onClick={(e) => click(e, boton.pos, boton.color,props.disabled)}
+                        >
+                        
                      </BotonApp>
                      )
             })}

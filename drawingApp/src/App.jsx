@@ -1,13 +1,19 @@
 import './App.css'
 import Home from './components/Home'
-import { Header } from './components/styles/Contendor'
+import { Header, Queue, Texto } from './components/styles/Contendor'
+import { InputAgregarDibujo } from './components/styles/Input'
 
 function App() {
 
   return (
     <>
-      <Header> Aplicación de dibujo </Header>
-
+      <Header>
+          <Texto>Aplicación de dibujo</Texto> 
+          <InputAgregarDibujo
+            placeholder='Search......'
+          />
+      </Header>
+        
       <div className="App">
         <Home/>
       </div>

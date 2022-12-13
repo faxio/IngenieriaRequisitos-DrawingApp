@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { Buttons } from './Buttons'
 import { ContenedorCuadrilla, ContenedorDraw, Stack } from './styles/Contendor'
 import { BotonesInteractivos, Icons, InputInteractivo } from './styles/Button'
@@ -8,12 +8,16 @@ const URL = "http://localhost:3000/api/dibujos"
 
 const Card = (props) => {
 
+    const colorActivado = "#06c364"
     const [color, setColor] = useState("#FF0000")
+    const [ activar, setActivar] = useState(true)
+
     const changeColor = (e) => {
         e.preventDefault();
 
         setColor(e.target.value)
     }
+
 
     const eliminarDibujo = async()=> {
         axios
@@ -32,21 +36,24 @@ const Card = (props) => {
                         type="color"
                         value={color}
                         onChange={changeColor}
+                        disabled={activar}
                     />
                 </Stack>
 
                 <div>
                     <ContenedorCuadrilla>
-                        <Buttons value={color} id={props.id}/>
+                        <Buttons value={color} id={props.id} disabled={activar}/>
                         
                     </ContenedorCuadrilla>
                     <p>{props?.nombre}</p>
                 </div>
                 <Stack>
+                    {/* 
                     <BotonesInteractivos> 
                         <i className='bx bx-save'></i>
-                    </BotonesInteractivos>
-                    <BotonesInteractivos>
+                    </BotonesInteractivos >
+                    */}
+                    <BotonesInteractivos onClick={ (e) => setActivar(!activar) } color={activar?  "" : colorActivado}>
                         <i className='bx bx-edit-alt' ></i>
                     </BotonesInteractivos>
                     <BotonesInteractivos onClick={eliminarDibujo}>

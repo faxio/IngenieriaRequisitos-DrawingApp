@@ -25,13 +25,31 @@ export const Stack = styled.div`
     display: flex;
     flex-direction: column;
 `
+export const Queue = styled.div`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+`
 
-export const Header = styled.h2`
+export const Header = styled.div`
     background-color: black;
     color: white;
     padding: 10px;
     font-weight: 100;
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+`
+
+export const Texto = styled.h2`
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-weight: 100;
+    margin-bottom: 10px;
+    display: inline;
+    margin-right: 10px;
 `
 
 export const ContenedorCard = styled.div`

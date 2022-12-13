@@ -7,4 +7,6 @@ export const InputAgregarDibujo = styled.input`
     margin-bottom: 10px;
     width: 90%;
     margin-right: 10px;
+    max-width: 450px;
+    max-height: 70px;
 `
